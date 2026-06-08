@@ -21,10 +21,18 @@
             the entirety of interstellar</p>
     </article>
 
+
+    {% for post in posts %}
+        <time>published: {{ post.published_date }}</time>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    {% endfor %}
+
     <header>
         <h3 style="color:Crimson;">my f1 predictions</h3>
     </header>
     <body>
         <p>if you are reading this on june 5th 2026, my prediction is</p>
         <strong>lewis hamilton will get p1 in monaco on june 7th 2026</strong>
+
 </html>
