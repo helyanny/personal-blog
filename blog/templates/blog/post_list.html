@@ -9,20 +9,29 @@
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
 
-
+    <body>
         <header class="blog-header">
             <div class="container">
                 <h1><a href="/">Helyanny's Archive</a></h1>
             </div>
         </header>
     
-    <body>
-        {% for post in posts %}
-        <article class="blog-post">
-            <h2> <a href="">{{ post }}</a></h2>
-            <p>{{ post.text|linebreaksbr }}</p>
-            <time>published: {{ post.published_date }}</time>
-        </article>
-        {% endfor %}
+        <main class= "container">
+            <div class="row">
+                <div class="col">
+                    {% for post in posts %}
+                        <article class="post">
+                            <h2> <a href="">{{ post }}</a></h2>
+                            <p>{{ post.text|linebreaksbr }}</p>
+                            <time class="date">
+                                {{ post.published_date }}
+                            </time>
+                        </article>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </main>
+
     </body>
 </html>
